@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Amazing Amy’s Barbershop</title>
+</head>
+<body>
+    <h1>Amazing Amy’s Barbershop</h1>
+    <p>A Fresh Cut You for Your Family!</p>
+
+    <!-- Item 1 -->
+    <p>Hairstyling Services--Lisa: 50 RMB</p>
+    <img src="http://tse4.mm.bing.net/th?id=OIP.YQIUdAV4MhxuX3x1HAs38wHaE8&w=232&h=160&c=7&o=5&pid=1.7">
+
+    <!-- Item 2 -->
+    <p> Haircut with Optional Color or Partial or Full Highlights-- Malinda : 55 RMB</p>
+    <img src="http://tse4.mm.bing.net/th?id=OIP.hDfpzzW6C-cWMYbPjDn1jQHaHs&pid=Api">
+
+    <!-- Item 3 --> 
+    <p>Blowout of Choice or Hair-Extensions Blowout at Hair Fusion Bar-- Meghan: 40 RMB</p>
+    <img src="http://tse2.mm.bing.net/th?id=OIP.ezWBu5OsI6FcaTDtSbS8CwHaKD&pid=Api">
+
+    <!-- User Form -->
+    <h1>submit your barber</h1>
+    <form action="{% url 'haircut:home_page' %} " method="POST">
+        {% csrf_token %}
+        <input type="text" name="item" placeholder="the own customer’s name,"><br>
+        <textarea placeholder="appointment time" name="appointment time"></textarea><br>
+        <input type="submit" value="submit now!">
+    </form>
+    <h1>Your Order form</h1>
+    <p>Item: {{time}}</p>
+    <p>Address: {{address}}</p>
+
+</body>
+</html>
+
